@@ -1,0 +1,115 @@
+@mixin disabled {
+  color: #c0c4cc;
+  cursor: not-allowed;
+  background-image: none;
+  background-color: #fff;
+  border-color: #ebeef5;
+}
+@mixin pd {
+  color: #8cc5ff;
+  background-color: #ecf5ff;
+  border-color: #d9ecff;
+}
+@mixin sd {
+  color: #a4da89;
+  background-color: #f0f9eb;
+  border-color: #e1f3d8;
+}
+@mixin id {
+  color: #bcbec2;
+  background-color: #f4f4f5;
+  border-color: #e9e9eb;
+}
+@mixin wd {
+  color: #f0c78a;
+  background-color: #fdf6ec;
+  border-color: #faecd8;
+}
+@mixin dd {
+  color: #f9a7a7;
+  background-color: #fef0f0;
+  border-color: #fde2e2;
+}
+.plain {
+  &:hover {
+    background: #fff;
+    border-color: #409eff;
+    color: #409eff;
+  }
+}
+[type="primary"].plain {
+  color: #409eff;
+  background: #ecf5ff;
+  border-color: #b3d8ff;
+  &:hover {
+    @include primary;
+  }
+}
+[type="success"].plain {
+  color: #67c23a;
+  background: #f0f9eb;
+  border-color: #c2e7b0;
+  &:hover {
+    @include success;
+  }
+}
+[type="info"].plain {
+  color: #909399;
+  background: #f4f4f5;
+  border-color: #d3d4d6;
+  &:hover {
+    @include info;
+  }
+}
+[type="warning"].plain {
+  color: #e6a23c;
+  background: #fdf6ec;
+  border-color: #f5dab1;
+  &:hover {
+    @include warning;
+  }
+}
+[type="danger"].plain {
+  color: #f56c6c;
+  background: #fef0f0;
+  border-color: #fbc4c4;
+  &:hover {
+    @include danger;
+  }
+}
+.plain.disabled {
+  @include disabled;
+  &:hover {
+    @include disabled;
+  }
+}
+[type="primary"].plain.disabled {
+  @include pd;
+  &:hover {
+    @include pd;
+  }
+}
+[type="success"].plain.disabled {
+  @include sd;
+  &:hover {
+    @include sd;
+  }
+}
+[type="info"].plain.disabled {
+  @include id;
+  &:hover {
+    @include id;
+  }
+}
+[type="warning"].plain.disabled {
+  @include wd;
+  &:hover {
+    @include wd;
+  }
+}
+[type="danger"].plain.disabled {
+  @include dd;
+  &:hover {
+    @include dd;
+  }
+}

@@ -1,0 +1,109 @@
+/* 类型 */
+@mixin primary {
+  color: #fff;
+  background-color: #409eff;
+  border-color: #409eff;
+}
+@mixin success {
+  color: #fff;
+  background-color: #67c23a;
+  border-color: #67c23a;
+}
+@mixin info {
+  color: #fff;
+  background-color: #909399;
+  border-color: #909399;
+}
+@mixin warning {
+  color: #fff;
+  background-color: #e6a23c;
+  border-color: #e6a23c;
+}
+@mixin danger {
+  color: #fff;
+  background-color: #f56c6c;
+  border-color: #f56c6c;
+}
+
+@mixin disabled {
+  color: #c0c4cc;
+  cursor: not-allowed;
+  background-image: none;
+  background-color: #fff;
+  border-color: #ebeef5;
+}
+[type="primary"] {
+  @include primary;
+  &:hover {
+    background: #66b1ff;
+    border-color: #66b1ff;
+    color: #fff;
+  }
+}
+[type="success"] {
+  @include success;
+  &:hover {
+    background: #85ce61;
+    border-color: #85ce61;
+    color: #fff;
+  }
+}
+[type="info"] {
+  @include info;
+  &:hover {
+    background: #a6a9ad;
+    border-color: #a6a9ad;
+    color: #fff;
+  }
+}
+[type="warning"] {
+  @include warning;
+  &:hover {
+    background: #ebb563;
+    border-color: #ebb563;
+    color: #fff;
+  }
+}
+[type="danger"] {
+  @include danger;
+  &:hover {
+    background: #f78989;
+    border-color: #f78989;
+    color: #fff;
+  }
+}
+
+.disabled,
+.disabled:hover {
+  @include disabled;
+}
+[type="primary"].disabled,
+[type="primary"].disabled:hover {
+  color: #fff;
+  background-color: #a0cfff;
+  border-color: #a0cfff;
+}
+[type="success"].disabled,
+[type="success"].disabled:hover {
+  color: #fff;
+  background-color: #b3e19d;
+  border-color: #b3e19d;
+}
+[type="info"].disabled,
+[type="info"].disabled:hover {
+  color: #fff;
+  background-color: #c8c9cc;
+  border-color: #c8c9cc;
+}
+[type="warning"].disabled,
+[type="warning"].disabled:hover {
+  color: #fff;
+  background-color: #f3d19e;
+  border-color: #f3d19e;
+}
+[type="danger"].disabled,
+[type="danger"].disabled:hover {
+  color: #fff;
+  background-color: #fab6b6;
+  border-color: #fab6b6;
+}

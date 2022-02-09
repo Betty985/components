@@ -1,0 +1,25 @@
+// 尺寸
+@mixin medium {
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+@mixin small {
+  padding: 9px 15px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+@mixin mini {
+  padding: 9px 15px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+[size="medium"] {
+  @include medium;
+}
+[size="small"] {
+  @include small;
+}
+[size="mini"] {
+  @include mini;
+}
