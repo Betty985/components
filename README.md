@@ -1,4 +1,4 @@
-# 配置模板 1-9
+# 配置模板
 
 - vscode 去配置 json
 - 在集成终端用“npm create vite@latest”创建项目
@@ -479,11 +479,20 @@ $width: 1263;
 - disabled 是否禁用
 - icon 图标
 
-- 默认防抖
-- top 按钮
+- debounce 默认防抖
+- top 回到顶部按钮
 
 ## input 组件
 
-- target:
+### target
 
 - 总结：
+
+# css
+
+- transform 对行内元素无效，可以将元素设置为行内块或者块级元素
+
+# vue
+
+emit("事件名","args")
+emit 调用组件上绑定的方法

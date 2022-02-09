@@ -59,3 +59,17 @@ button:hover {
 [type="text"].disabled {
   @include td;
 }
+// 加载
+@keyframes rotating {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+.icon-jiazai {
+  display: inline-block;
+  padding: 3px;
+  animation: rotating 2s linear infinite;
+}

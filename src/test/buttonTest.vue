@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import myBtn from "@/components/button/index.vue";
 import myGroup from "@/components/button/group.vue";
+const isdebounce = {
+  open: true,
+  time: 3000,
+};
+
+const test = function (v) {
+  console.log(v);
+};
 </script>
 
 <template>
@@ -10,6 +18,12 @@ import myGroup from "@/components/button/group.vue";
     <my-btn size="medium">中等按钮</my-btn>
     <my-btn size="small">小按钮</my-btn>
     <my-btn size="mini">超小按钮</my-btn>
+  </my-group>
+  <my-group>
+    <template #title> 防抖测试 </template>
+    <my-btn type="primary" @click="test" :isdebounce="isdebounce"
+      >主要按钮</my-btn
+    >
   </my-group>
   <my-group>
     <template #title> type测试 </template>
