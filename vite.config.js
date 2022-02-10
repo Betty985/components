@@ -8,9 +8,8 @@ const pathResolve = (dir) => {
 // 设置别名
 const alias = {
   "@": pathResolve("src"),
-  "@build": pathResolve("build"),
-  //解决开发环境下的警告
-  "vue-i18n": "vue-i18n/dist/vue-i18n.cjs.js",
+  "@c": pathResolve("src/components"),
+  "@v": pathResolve("src/view"),
 };
 // https://vitejs.dev/config/
 export default defineConfig({

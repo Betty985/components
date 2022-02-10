@@ -69,13 +69,16 @@ export default defineConfig({
 # vue-router
 
 - 安装：npm install vue-router@4
-- 在根组件导入 router，vm.use("router")
+- 把路由加到实例里。在根组件导入 router，vm.use("router")。之后可以在所有组件通过 this.$router 访问当前路由,如this.$router.push()
 - router 配置文件
 
 ```ts
+// 导入
 import{createRouter,createWebHistory} from "vue-router"
 // 需要写文件扩展名
 import login from "@/login.vue"
+const hello =import("路径")
+// 定义路由
 const routes =[
   // 配置路由 (动态路由)
   {path:"/"，name:"home",components:()=>import("文件路径")},
@@ -83,11 +86,18 @@ const routes =[
   {path:"/login"，name:"logon",components:login},
 // 重定向
 {path:"/redirect",redirect:"路径"}]
+// 创建路由
 const router=createRouter({
   history:createWebhistory(),
   routes
 })
 export default router
+```
+
+- 渲染路由中组件的容器
+
+```vue
+<router-view></router-view>
 ```
 
 # scss
@@ -485,6 +495,34 @@ $width: 1263;
 ## input 组件
 
 ### target
+
+- type 类型 string text，textarea 和其他 原生 input 的 type 值 text
+- value / v-model 绑定值 string / number — —
+- maxlength 原生属性，最大输入长度 number — —
+- minlength 原生属性，最小输入长度 number — —
+- show-word-limit 是否显示输入字数统计，只在 type = "text" 或 type = "textarea" 时有效 boolean — false
+- placeholder 输入框占位文本 string — —
+- clearable 是否可清空 boolean — false
+- show-password 是否显示切换密码图标 boolean — false
+- disabled 禁用 boolean — false
+- size 输入框尺寸，只在 type!="textarea" 时有效 string medium / small / mini —
+- prefix-icon 输入框头部图标 string — —
+- suffix-icon 输入框尾部图标 string — —
+- rows 输入框行数，只对 type="textarea" 有效 number — 2
+- autosize 自适应内容高度，只对 type="textarea" 有效，可传入对象，如，{ minRows: 2, maxRows: 6 } boolean / object — false
+- autocomplete 原生属性，自动补全 string on, off off
+- auto-complete 下个主版本弃用 string on, off off
+- name 原生属性 string — —
+- readonly 原生属性，是否只读 boolean — false
+- max 原生属性，设置最大值 — — —
+- min 原生属性，设置最小值 — — —
+- step 原生属性，设置输入字段的合法数字间隔 — — —
+- resize 控制是否能被用户缩放 string none, both, horizontal, vertical —
+- autofocus 原生属性，自动获取焦点 boolean true, false false
+- form 原生属性 string — —
+- label 输入框关联的 label 文字 string — —
+- tabindex 输入框的 tabindex string - -
+- validate-event 输入时是否触发表单的校验 boolean - true
 
 - 总结：
 
