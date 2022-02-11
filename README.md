@@ -100,6 +100,28 @@ export default router
 <router-view></router-view>
 ```
 
+## 路由跳转
+
+- router.push()
+
+```js
+import { useRoute, useRouter } from "vue-router";
+let router = useRouter();
+const test = function () {
+  router.push("/");
+  //   router.go("/");
+};
+```
+
+- 会渲染成 a 标签`<router-link to="路径"></router-link>`
+
+```html
+<router-link to="/">首页</router-link>
+```
+
+- hash 值
+- BOM 的 API
+
 # scss
 
 - 安装：需要安装三个包
@@ -534,3 +556,95 @@ $width: 1263;
 
 emit("事件名","args")
 emit 调用组件上绑定的方法
+
+## input
+
+### 组件通信
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="hello-vue" class="demo">
+      <my-input v-model="msg" name="123"></my-input>
+      <br />
+      <my-input v-model="msg1" name="1234"></my-input>
+      <br />
+      <my-input v-model="msg2" name="1235"></my-input>
+      <p>msg:{{msg}}</p>
+      <p>msg1:{{msg1}}</p>
+      <p>msg2:{{msg2}}</p>
+    </div>
+
+    <script>
+      const myInput = {
+        props: {
+          modelValue: "",
+        },
+        methods: {
+          clear() {
+            this.$emit("update:modelValue", "");
+          },
+          test(e) {
+            let value = e.target.value;
+            this.$emit("update:modelValue", value);
+          },
+        },
+        template: `<button @click='clear'>clear</button><input :value='modelValue' @input='test'/>`,
+      };
+      let app = Vue.createApp({
+        components: {
+          myInput,
+        },
+        data() {
+          return {
+            msg: "hello123",
+            msg1: "1",
+            msg2: "2",
+          };
+        },
+      });
+
+      app.mount("#hello-vue");
+    </script>
+  </body>
+</html>
+```
+
+```html
+<script setup>
+  import { reactive } from "@vue/reactivity";
+
+  const props = defineProps({
+    modelValue: String,
+  });
+  const emit = defineEmits();
+  // vue3直接声明的数据不是响应式数据
+  // 把数据变成响应式，才能使用v-model
+  const react = reactive({
+    a: "",
+    b: "",
+  });
+  function update(e) {
+    emit("update:modelValue", e.target.value);
+  }
+  function clear() {
+    emit("update:modelValue", "");
+  }
+</script>
+
+<template>
+  <div class="myinput">
+    <input type="text" :value="props.modelValue" @input="update" />
+    <button @click="clear">清空</button>
+    <!-- <input type="text" v-model="react.a" />
+    {{ react.a }} -->
+  </div>
+</template>
+
+<style scoped></style>
+```

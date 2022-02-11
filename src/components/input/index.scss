@@ -15,7 +15,6 @@
   padding: 0 15px;
   transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   width: 100%;
-
   &:hover {
     border: 1px solid #b5b8be;
   }
@@ -52,6 +51,11 @@
   color: #c0c4cc;
   cursor: not-allowed;
 }
+// 可清空和密码的样式
+@mixin icon {
+  margin-left: -28px;
+  color: #dcdfe6;
+}
 @include placeholder;
 input {
   @include input;
@@ -60,7 +64,26 @@ input {
 .myInput {
   width: 180px;
   cursor: pointer;
+  position: relative;
+  font-size: 14px;
+  display: inline-block;
 }
 .disabled input {
   @include disabled;
+}
+.clearable,
+.clearable input {
+  padding-right: 30px;
+}
+.clearable i {
+  border-radius: 50%;
+  border: 1px solid #dcdfe6;
+  @include icon;
+  &:hover {
+    border: 1px solid rgb(221, 69, 69);
+    color: rgb(221, 69, 69);
+  }
+}
+.showPassword i {
+  @include icon;
 }
