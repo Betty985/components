@@ -25,6 +25,36 @@
 }
 ```
 
+# props,emit 传值
+
+## input 类型组件(input switch)
+
+父组件
+
+```js
+<father v-model="value"></father>
+```
+
+子组件
+
+```js
+const props = defineProps({
+  modelValue: {
+    default: false,
+  },
+});
+const emit = defineEmits(["update:modelValue"]);
+const click = function () {
+  emit("update:modelValue", !props.modelValue);
+};
+```
+
+## [参考资料](https://v3.cn.vuejs.org/guide/migration/v-model.html#%E6%A6%82%E8%A7%88)
+
+> 用于自定义组件时，v-model prop 和事件默认名称已更改：
+> prop：value -> modelValue；
+> 事件：input -> update:modelValue
+
 # 怎么获取元素属性，然后根据元素属性修改 class
 
 - ref

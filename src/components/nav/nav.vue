@@ -13,6 +13,15 @@ import myBtn from "@/components/button/index.vue";
     <my-btn round icon="icon-B-shurukuang"
       ><router-link to="/input">输入框</router-link></my-btn
     >
+    <my-btn round icon="icon-gongyezujian-kaiguan"
+      ><router-link to="/switch">开关</router-link></my-btn
+    >
+    <my-btn round icon="icon-gongyezujian-kaiguan"
+      ><router-link to="/table">表格</router-link></my-btn
+    >
+    <my-btn round icon="icon-gongyezujian-kaiguan"
+      ><router-link to="/divider">分割线</router-link></my-btn
+    >
   </nav>
 </template>
 

@@ -1,0 +1,41 @@
+.divider {
+  position: relative;
+  background-color: #dcdfe6;
+  padding: 0;
+}
+.divider-horizontal {
+  color: transparent;
+  display: block;
+  height: 0.1px;
+  width: 100%;
+  margin: 24px 0;
+  border-top: 1px;
+}
+.divider-text {
+  position: absolute;
+  background-color: #fff;
+  padding: 0 20px;
+  font-weight: 500;
+  color: #303133;
+  font-size: 14px;
+}
+.divider-text.left {
+  left: 20px;
+  transform: translateY(-50%);
+}
+.divider-text.right {
+  right: 20px;
+  transform: translateY(-50%);
+}
+.divider-text.center {
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.divider-vertical {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  margin: 0 8px;
+  vertical-align: middle;
+  position: relative;
+}
