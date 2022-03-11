@@ -1,0 +1,44 @@
+.my-card {
+  border: 1px solid #ebeef5;
+  border-radius: 4px;
+
+  .my-card-header {
+    border-bottom: 1px solid #ebeef5;
+    height: 48px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    color: #2c405a;
+
+    .my-card-title {
+      font-weight: 600;
+      color: rgb(93, 93, 93);
+    }
+
+    .my-card-subtitle {
+      font-size: 14px;
+    }
+  }
+
+  .my-card-body {
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #303133;
+  }
+}
+
+.my-card-shadow-always {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.my-card-shadow-hover:hover {
+  transition: box-shadow 0.25s;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+.my-card-shadow-never {
+  box-shadow: none;
+}

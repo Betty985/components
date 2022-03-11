@@ -4,24 +4,28 @@ import myBtn from "@/components/button/index.vue";
 
 <template>
   <nav>
-    <my-btn round icon="icon-shouye"
-      ><router-link to="/">首页</router-link></my-btn
+    <router-link to="/"
+      ><my-btn round icon="icon-shouye">首页</my-btn></router-link
     >
-    <my-btn round icon="icon-anniu"
-      ><router-link to="/button">按钮</router-link></my-btn
+    <router-link to="/button"
+      ><my-btn round icon="icon-anniu">按钮</my-btn></router-link
     >
-    <my-btn round icon="icon-B-shurukuang"
-      ><router-link to="/input">输入框</router-link></my-btn
+    <router-link to="/input"
+      ><my-btn round icon="icon-B-shurukuang">输入框</my-btn></router-link
     >
-    <my-btn round icon="icon-gongyezujian-kaiguan"
-      ><router-link to="/switch">开关</router-link></my-btn
+
+    <router-link to="/switch"
+      ><my-btn round icon="icon-gongyezujian-kaiguan">开关</my-btn></router-link
     >
-    <my-btn round icon="icon-gongyezujian-kaiguan"
-      ><router-link to="/table">表格</router-link></my-btn
+    <router-link to="/table"
+      ><my-btn round icon="icon-gongyezujian-kaiguan">表格</my-btn></router-link
     >
-    <my-btn round icon="icon-gongyezujian-kaiguan"
-      ><router-link to="/divider">分割线</router-link></my-btn
+    <router-link to="/divider"
+      ><my-btn round icon="icon-gongyezujian-kaiguan"
+        >分割线</my-btn
+      ></router-link
     >
+    <router-link to="/card"> <my-btn round>卡片</my-btn></router-link>
   </nav>
 </template>
 
@@ -37,5 +41,8 @@ nav {
   top: 10px;
   display: flex;
   flex-direction: column;
+}
+button {
+  width: 6rem;
 }
 </style>
